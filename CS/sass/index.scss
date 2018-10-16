@@ -1,0 +1,181 @@
+/*----------------one----------------*/
+.index {
+    .row {
+        &.one {
+            box-shadow: inset 0px -10px 30px #777;
+            .container {
+                height: 100vh;
+                align-items: center;
+                text-align: center;
+                flex-direction: column;
+                justify-content: center;
+                @media screen and (max-height: 670px) {
+                    height: 100%;
+                    padding-bottom: 50px;
+                }
+                h1, h6 {
+                    text-shadow: 1px 1px 1px black;
+                    color: #ffb812; 
+                }
+                .wrapper {
+                    img {
+                        width: 250px;
+                        margin-bottom: 20px;
+                    }
+                    .wrapperino {
+                        width: 50%;
+                        margin: auto;
+                        background: rgba(255,255,255,0.6);
+                        padding: 10px 20px 20px 20px;
+                        border-radius: 0 20px 0 20px;
+                        box-shadow: inset 0px 0px 15px black;
+                        @media screen and (max-width: 767px) {
+                            width: auto;
+                            border-radius: 0;
+                        }
+                        p{
+                            color: black;
+                        }
+                    }
+                    &:first-child {
+                        margin-top: -30px;
+                        width: 100%;
+                        @media screen and (max-height: 670px) {
+                            margin-top: 0;
+                        }
+                    }
+                    &:last-child {
+                        width: auto;
+                    }
+                }
+            }
+            .scroll {
+                position: absolute;
+                bottom: 20px;
+                right: 0;
+                width: 70px;
+                background: url(../img/scroll.png);
+                background-size: contain;
+                height: 70px;
+                animation-name: scroll;
+                animation-duration: 1.2s;
+                animation-iteration-count: infinite;
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
+            }
+        }
+
+        /*----------------TWO----------------*/
+        &.two {
+            min-height: 600px;
+            display: flex;
+            box-shadow: 0 0 20px black;
+            .container {
+                padding: 20px;
+                @media screen and (max-width: 800px) {
+                    flex-direction: column;
+                    padding: 40px 10px;
+                }
+                .block {
+                    &.left {
+                        border-radius: 20px 0 20px 0;
+                        border: 1px solid black;
+                        box-shadow: 3px 3px 10px #444;
+                        width: 60%;
+                        padding: 20px;
+                        @media screen and (max-width: 800px) {
+                            width: auto;
+                            padding: 10px;
+                            border-radius: 0;
+                            box-shadow: none;
+                            border: none;
+                        }
+                        h6 {
+                            color: #ffb812; 
+                            text-shadow: 1px 1px 1px black;
+                        }
+                    }
+                    &.right {
+                        margin: 0 20px;
+                        text-align: center;
+                        width: 40%;
+                        @media screen and (max-width: 800px) {
+                            width: auto;
+                        }
+                        img {
+                            width: 400px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*--------------THREE-----------------*/
+        &.three {
+            min-height: 500px;
+            overflow: hidden;
+            .container {
+                width: 100%;
+                @media screen and (max-width: 600px) {
+                    flex-direction: column;
+                    padding: 30px 0;
+                }
+                .block {
+                    position: relative;
+                    width: 250px;
+                    height: 250px;
+                    margin: auto;
+                    background: rgba(55, 55, 55, 0.8);
+                    box-shadow: inset 0 0 20px white;
+                    border-radius: 50%;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.5s ease;
+                    overflow: hidden;
+                    @media screen and (max-width: 600px) {
+                        margin: 30px 0;
+                    }
+                    a {
+                        padding-top: 20px;
+                        font-size: 19px;
+                        text-align: center;
+                        width: 250px;
+                        height: 250px;
+                        cursor: pointer;
+                        position: relative;
+                        color: white;
+                        line-height: 21px;
+                        text-shadow: 1px 1px 1px black;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            bottom: 10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: url(../img/effettua.png);
+                            width: 180px;
+                            height: 180px;
+                            transition: all 0.5s ease;
+                        }
+                    }
+                    &.left a:before {
+                        background: url("../img/effettua.png");
+                    }
+                    &.right a:before {
+                        background: url("../img/controlla.png");
+                    }
+                    &:hover {
+                        background: #222;
+                        a:before {
+                            transform:  translateX( -50%) scale(1.15);
+                        }
+                    } 
+                }
+            }
+        }
+
+    }
+}
